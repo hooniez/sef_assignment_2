@@ -6,4 +6,3 @@ abstract class Staff {
 
     public abstract boolean paySalary(double amount);
 }
-     ////d

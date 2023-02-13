@@ -28,6 +28,7 @@ public class TimeTrackingSystem extends BasicSystem {
     }
 
     public void addCashier(Cashier cashier) {
+        // Add a cashier to the list of cashiers TimeTrackingSystem keeps track of
     }
 
     public void generatePayslips() {
@@ -46,5 +47,16 @@ public class TimeTrackingSystem extends BasicSystem {
 
     public List<Payslip> getPayslips() {
         return payslips;
+    }
+
+    public boolean displayReport() {
+        boolean hasIssue = false;
+        System.out.println("Report Displayed");
+        cashierWokredHours.forEach((cashier, numHoursWorked) -> {
+            System.out.println("Cashier: " + cashier.getId() + " has worked for " + numHoursWorked
+                    + " hours with the hourly rate of $" + cashier.getHourlyWage() + ".");
+        });
+        System.out.println();
+        return hasIssue;
     }
 }

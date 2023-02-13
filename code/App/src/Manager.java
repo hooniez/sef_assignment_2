@@ -4,6 +4,7 @@ public class Manager extends Staff {
     private double yearlySalary;
 
     public void lookAfterInventory(InventorySystem is) {
+        System.out.println("Manager looks after the inventory of the store");
         boolean orderPlaced = is.placeOrders();
         if (orderPlaced) {
             System.out.println("Entire Orders successfully placed.");
@@ -11,11 +12,13 @@ public class Manager extends Staff {
     }
 
     public void payCashiers(TimeTrackingSystem tts, PayrollSystem ps) {
+        System.out.println("Manager tries to pay cashiers");
         tts.generatePayslips();
         boolean processSuccessful = ps.process(tts.getPayslips());
         if (processSuccessful) {
             System.out.println("Cashiers successfully paid.");
         }
+        System.out.println();
     }
 
     public boolean paySalary(double amount) {

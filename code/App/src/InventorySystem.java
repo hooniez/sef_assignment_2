@@ -67,4 +67,19 @@ public class InventorySystem extends BasicSystem {
         return entireOrdersPlaced;
     }
 
+    public boolean displayReport() {
+        boolean hasIssue = false;
+        System.out.println("Report Displayed");
+        for (Item item : items) {
+            int currItemQuantity = item.getQuantity();
+            // If the current item's quantity is less than the minimum in the range
+            if (currItemQuantity < minQuantity) {
+                System.out.println(
+                        "Item: " + item.getItemID() + " is running low with the count of " + item.getQuantity() + ".");
+            }
+        }
+        System.out.println();
+        return hasIssue;
+    }
+
 }

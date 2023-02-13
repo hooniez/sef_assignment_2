@@ -36,7 +36,7 @@ public class App {
         System.out.println();
 
         // Use Case 3: the manager looks after the inventory of the store.
-        // Generate a dummy inventory with 1000 items in it. 
+        // Generate a dummy inventory with 1000 items in it.
         InventorySystem is = new InventorySystem();
         boolean isHasIssue = mngr.checkReport(is);
         // The loop will never be entered in this dummy code.
